@@ -1,0 +1,142 @@
+{
+ "api": {
+  "reading_mib": 65.32,
+  "from_": "this lap",
+  "this_lap_mib": 65.32,
+  "first_lap_mib": 65.32,
+  "limit_mib": 76
+ },
+ "cam-a1": {
+  "reading_mib": 84.62,
+  "from_": "this lap",
+  "this_lap_mib": 84.62,
+  "first_lap_mib": 84.32,
+  "limit_mib": 98
+ },
+ "cam-a2": {
+  "reading_mib": 34.98,
+  "from_": "this lap",
+  "this_lap_mib": 34.98,
+  "first_lap_mib": 34.93,
+  "limit_mib": 41
+ },
+ "cam-b1": {
+  "reading_mib": 84.25,
+  "from_": "first lap",
+  "this_lap_mib": 84.02,
+  "first_lap_mib": 84.25,
+  "limit_mib": 97
+ },
+ "cam-b2": {
+  "reading_mib": 35.09,
+  "from_": "this lap",
+  "this_lap_mib": 35.09,
+  "first_lap_mib": 35.06,
+  "limit_mib": 41
+ },
+ "cam-c1": {
+  "reading_mib": 84.54,
+  "from_": "this lap",
+  "this_lap_mib": 84.54,
+  "first_lap_mib": 84.29,
+  "limit_mib": 98
+ },
+ "classify": {
+  "reading_mib": 1411.51,
+  "from_": "first lap",
+  "this_lap_mib": 1410.15,
+  "first_lap_mib": 1411.51,
+  "limit_mib": 1624
+ },
+ "gateway": {
+  "reading_mib": 55.32,
+  "from_": "first lap",
+  "this_lap_mib": 54.93,
+  "first_lap_mib": 55.32,
+  "limit_mib": 64
+ },
+ "keycloak": {
+  "reading_mib": 963.16,
+  "from_": "this lap",
+  "this_lap_mib": 963.16,
+  "first_lap_mib": null,
+  "limit_mib": 1108
+ },
+ "mediamtx": {
+  "reading_mib": 94.38,
+  "from_": "this lap",
+  "this_lap_mib": 94.38,
+  "first_lap_mib": null,
+  "limit_mib": 109
+ },
+ "mediamtx-s2": {
+  "reading_mib": 38.89,
+  "from_": "this lap",
+  "this_lap_mib": 38.89,
+  "first_lap_mib": null,
+  "limit_mib": 45
+ },
+ "mosquitto": {
+  "reading_mib": 10.38,
+  "from_": "this lap",
+  "this_lap_mib": 10.38,
+  "first_lap_mib": null,
+  "limit_mib": 12
+ },
+ "mosquitto-s2": {
+  "reading_mib": 10.0,
+  "from_": "this lap",
+  "this_lap_mib": 10.0,
+  "first_lap_mib": null,
+  "limit_mib": 12
+ },
+ "motion": {
+  "reading_mib": 91.95,
+  "from_": "first lap",
+  "this_lap_mib": 91.29,
+  "first_lap_mib": 91.95,
+  "limit_mib": 106
+ },
+ "postgres": {
+  "reading_mib": 51.24,
+  "from_": "this lap",
+  "this_lap_mib": 51.24,
+  "first_lap_mib": null,
+  "limit_mib": 59
+ },
+ "postgres-s2": {
+  "reading_mib": 36.03,
+  "from_": "this lap",
+  "this_lap_mib": 36.03,
+  "first_lap_mib": null,
+  "limit_mib": 42
+ },
+ "valkey": {
+  "reading_mib": 99.84,
+  "from_": "this lap",
+  "this_lap_mib": 99.84,
+  "first_lap_mib": null,
+  "limit_mib": 115
+ },
+ "valkey-s2": {
+  "reading_mib": 16.31,
+  "from_": "this lap",
+  "this_lap_mib": 16.31,
+  "first_lap_mib": null,
+  "limit_mib": 19
+ },
+ "writer": {
+  "reading_mib": 79.36,
+  "from_": "first lap",
+  "this_lap_mib": 67.78,
+  "first_lap_mib": 79.36,
+  "limit_mib": 92
+ },
+ "writer-s2": {
+  "reading_mib": 73.39,
+  "from_": "first lap",
+  "this_lap_mib": 58.79,
+  "first_lap_mib": 73.39,
+  "limit_mib": 85
+ }
+}

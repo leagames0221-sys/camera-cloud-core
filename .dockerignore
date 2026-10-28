@@ -1,0 +1,12 @@
+.git
+.venv
+.claude
+.env
+poc
+tests
+docs
+mutation
+**/__pycache__
+**/.pytest_cache
+loadtest/out
+var

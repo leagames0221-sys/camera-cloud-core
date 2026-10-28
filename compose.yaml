@@ -1,0 +1,636 @@
+# camera-cloud-core: 18 services (and four more with the profiles `vision` and `device`). Copy .env.example to .env first (see README).
+# Ports are published on 127.0.0.1 only: the viewing page / API gateway (8000), Keycloak (8080), and the video
+# endpoints the browser talks to directly (HLS 8888 and playback 9996 of stamp 1, 8889 and 9998 of stamp 2). Database,
+# broker, MediaMTX's RTSP and Control API stay inside the compose network.
+name: camera-cloud-core
+
+x-camera: &camera
+  build:
+    context: .
+    dockerfile: services/camera/Dockerfile
+  image: ccc-camera:3.0
+  restart: "no"
+  mem_limit: 98m   # kernel's memory.peak of a new camera 84.6 MiB x 1.15 (docs/validation/memory_limits.md)
+  depends_on:
+    init: { condition: service_completed_successfully }
+    gateway: { condition: service_healthy }
+    mosquitto: { condition: service_healthy }
+    mediamtx: { condition: service_healthy }
+
+services:
+  # Runs once: creates the signing key and the shared secrets in the `secrets` volume (leaves existing ones alone).
+  init:
+    build:
+      context: .
+      dockerfile: services/api/Dockerfile
+    image: ccc-api:3.0
+    user: "0"
+    command: ["python", "-m", "app.init_secrets", "/secrets"]
+    volumes:
+      - secrets:/secrets
+    restart: "no"
+    mem_limit: 128m   # a one-shot job: no reading of its memory (docs/validation/memory_limits.md)
+
+  postgres:
+    image: postgres:17.11-alpine@sha256:eee6c6e1b0894fa4fe0075eb054af9fd1cf39a35321c2d4110626cfe506411fb
+    environment:
+      POSTGRES_USER: ccc
+      POSTGRES_DB: ccc
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?copy .env.example to .env}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ccc -d ccc"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+    mem_limit: 512m   # shared_buffers is 128MB by default; 512 MiB is the author's decision, not a PostgreSQL rule (docs/validation/memory_limits.md)
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.8.1@sha256:a78d6b79572168cb25886b80a8b5b8d4ed4390743e3eecb810538683e209dd6b
+    # start-dev is for the demo only (see README, limits).
+    command: ["start-dev", "--import-realm", "--features-disabled=impersonation,token-exchange-standard"]
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: ${KC_ADMIN_USER:?copy .env.example to .env}
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KC_ADMIN_PASSWORD:?copy .env.example to .env}
+      # The name the browser uses. Back-channel calls (the API reading the keys) use the request's own host name.
+      KC_HOSTNAME: http://localhost:8080
+      KC_HOSTNAME_BACKCHANNEL_DYNAMIC: "true"
+      KC_HEALTH_ENABLED: "true"
+      DEMO_USER_PASSWORD: ${DEMO_USER_PASSWORD:?copy .env.example to .env}
+    volumes:
+      - ./infra/keycloak/ccc-realm.json:/opt/keycloak/data/import/ccc-realm.json:ro
+    ports:
+      - "127.0.0.1:8080:8080"
+    healthcheck:
+      # no curl in the image (observed with `docker exec <keycloak container> sh -c 'command -v curl'`, which prints nothing
+      # and exits 1): speak HTTP over bash's /dev/tcp to the management port
+      test:
+        - CMD-SHELL
+        - |
+          exec 3<>/dev/tcp/127.0.0.1/9000
+          printf 'GET /health/ready HTTP/1.1\r\nHost: localhost\r\nConnection: close\r\n\r\n' >&3
+          grep -q '"status": "UP"' <&3
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
+    restart: unless-stopped
+    mem_limit: 1360m   # Keycloak's sizing: (1250 MB - 300 MB non-heap) / 0.7 (docs/validation/memory_limits.md)
+
+  mosquitto:
+    image: eclipse-mosquitto:2.1.2-alpine@sha256:860aeb5d63ce509508f6dcfb2bc8a1c1dd2bc60555b562b45ce90e52d8dabb0f
+    entrypoint: ["sh", "/entrypoint.sh"]
+    depends_on:
+      init: { condition: service_completed_successfully }
+    volumes:
+      - ./infra/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - ./infra/mosquitto/entrypoint.sh:/entrypoint.sh:ro
+      - dynsec:/mosquitto/dynsec
+      - type: volume
+        source: secrets
+        target: /run/secret
+        read_only: true
+        volume:
+          subpath: mosquitto
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z 127.0.0.1 1883"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+    mem_limit: 12m   # kernel's memory.peak 10.38 MiB x 1.15 (docs/validation/memory_limits.md)
+
+  # The API. MediaMTX reads the video keys from it and the gateway sends every call to it.
+  api:
+    build:
+      context: .
+      dockerfile: services/api/Dockerfile
+    image: ccc-api:3.0
+    depends_on:
+      init: { condition: service_completed_successfully }
+      postgres: { condition: service_healthy }
+      mosquitto: { condition: service_healthy }
+    environment:
+      DATABASE_URL: postgresql://ccc:${POSTGRES_PASSWORD:?copy .env.example to .env}@postgres:5432/ccc
+      SECRETS_DIR: /run/secret
+      # Fixed string: it is what the browser-side name puts into the token's `iss`.
+      OIDC_ISSUER: http://localhost:8080/realms/ccc
+      OIDC_JWKS_URL: http://keycloak:8080/realms/ccc/protocol/openid-connect/certs
+      OIDC_CLIENT_ID: ccc-web
+      MEDIAMTX_CONTROL_URL: http://mediamtx:9997
+      PUBLIC_HLS_URL: http://localhost:8888
+      PUBLIC_PLAYBACK_URL: http://localhost:9996
+      MQTT_HOST: mosquitto
+      # Broker set-up and reconciliation are done here, for every stamp in the file below; the state intake is the
+      # writer's of each stamp.
+      INGEST: "false"
+      STAMPS_FILE: /etc/ccc/stamps.json
+      # Calls per second one tenant may make: Stripe's global limit in production, 100 a second per account (ADR 0007).
+      TENANT_RATE: "100"
+      # Where the reconciliation tells stamp 1's writer about segments it added (for the motion worker, ADR 0011).
+      ANNOUNCE_URL: http://writer:8000
+    volumes:
+      - ./infra/stamps.json:/etc/ccc/stamps.json:ro
+      - type: volume
+        source: secrets
+        target: /run/secret
+        read_only: true
+        volume:
+          subpath: api
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/healthz', timeout=3)"]
+      interval: 5s
+      timeout: 4s
+      retries: 30
+      start_period: 5s
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    restart: unless-stopped
+    mem_limit: 76m   # kernel's memory.peak 65.32 MiB x 1.15 (docs/validation/memory_limits.md)
+
+  mediamtx:
+    image: bluenviron/mediamtx:1.21.2-ffmpeg@sha256:c0feb4acc548d5f410d57d9046f62dfa355e2abc4098f5243de9e86430c77a95
+    depends_on:
+      init: { condition: service_completed_successfully }
+      api: { condition: service_healthy }
+      writer: { condition: service_healthy }
+    volumes:
+      - ./infra/mediamtx/mediamtx.yml:/mediamtx.yml:ro
+      - ./infra/mediamtx/segment-hook.sh:/segment-hook.sh:ro
+      - recordings:/recordings
+      - type: volume
+        source: secrets
+        target: /run/secret
+        read_only: true
+        volume:
+          subpath: mediamtx
+    ports:
+      - "127.0.0.1:8888:8888"
+      - "127.0.0.1:9996:9996"
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z 127.0.0.1 9996 && nc -z 127.0.0.1 8554"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+    mem_limit: 109m   # kernel's memory.peak 94.38 MiB x 1.15 (docs/validation/memory_limits.md)
+
+  gateway:
+    build:
+      context: .
+      dockerfile: services/gateway/Dockerfile
+    image: ccc-gateway:3.0
+    depends_on:
+      api: { condition: service_healthy }
+    environment:
+      # Which API answers which kind of call is the table ROUTES in services/gateway/gateway/app.py.
+      API_LATER_URL: http://api:8000
+      KC_PUBLIC_URL: http://localhost:8080
+      KC_REALM: ccc
+      OIDC_CLIENT_ID: ccc-web
+    ports:
+      - "127.0.0.1:8000:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/healthz', timeout=3)"]
+      interval: 5s
+      timeout: 4s
+      retries: 30
+      start_period: 3s
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    restart: unless-stopped
+    mem_limit: 64m   # kernel's memory.peak 55.32 MiB x 1.15 (docs/validation/memory_limits.md)
+
+  # Stamp 1's queue and writer. The writer takes the state intake and the closed-segment calls from the first version
+  # of the API; the queue is on a network of its own (the writer and, with the profile `vision`, the two workers).
+  valkey:
+    image: valkey/valkey:9.1.2-alpine@sha256:48332870af354a799964c0012ae1194a0bf2bf894eb508f945810596dc2d8d11
+    # The image starts as root and then switches to this user; started as this user from the beginning it needs no
+    # capabilities. The accounts are in the ACL file (passwords as hashes only): `writer`, and for the profile `vision`
+    # `motion` and `classify`, each with only the stream commands it uses on only the streams it uses.
+    user: "999:999"
+    command:
+      - valkey-server
+      - --aclfile
+      - /run/secret/users.acl
+      - --appendonly
+      - "yes"
+      - --maxmemory
+      - 256mb
+      - --maxmemory-policy
+      - noeviction
+    # Only the writer and the two workers are on this network: the cameras and every other container are not, so they
+    # cannot reach it.
+    networks: [stamp1]
+    volumes:
+      - valkeydata:/data
+      - type: volume
+        source: secrets
+        target: /run/secret
+        read_only: true
+        volume:
+          subpath: valkey1
+    healthcheck:
+      # no account is logged in, so the answer to PING is NOAUTH: the server is up (observed with
+      # `docker exec <valkey container> valkey-cli ping`, which prints `NOAUTH Authentication required.`)
+      test: ["CMD-SHELL", "valkey-cli ping | grep -qE 'PONG|NOAUTH'"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    restart: unless-stopped
+    # not highest x 1.15 (53.6 MiB): the queue may grow to its `maxmemory` of 256mb, which has to fit under this limit (docs/validation/memory_limits.md)
+    mem_limit: 320m
+
+  writer:
+    image: ccc-api:3.0
+    command: ["uvicorn", "--factory", "app.writer:build_app", "--host", "0.0.0.0", "--port", "8000"]
+    depends_on:
+      init: { condition: service_completed_successfully }
+      postgres: { condition: service_healthy }
+      mosquitto: { condition: service_healthy }
+      valkey: { condition: service_healthy }
+      api: { condition: service_healthy }
+    networks: [default, stamp1]
+    environment:
+      DATABASE_URL: postgresql://ccc:${POSTGRES_PASSWORD:?copy .env.example to .env}@postgres:5432/ccc
+      STAMP_ID: "1"
+      SECRETS_DIR: /run/secret
+      MQTT_HOST: mosquitto
+      VALKEY_HOST: valkey
+      # Tell the motion worker of each segment that is in the index (ADR 0011). Stamp 2 has no such worker.
+      ANNOUNCE_RECORDED: "true"
+      # Events are taken only of the cameras the workers look at (ADR 0013); without the file no event is taken.
+      EVENT_CAMERAS_FILE: /run/vision/cameras.txt
+    volumes:
+      # this stamp's folder only: no video signing key
+      - type: volume
+        source: secrets
+        target: /run/secret
+        read_only: true
+        volume:
+          subpath: stamp1
+      # the list of cameras the workers look at (the folder: tools/setup_check_camera.py replaces the file)
+      - ./var/vision:/run/vision:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/healthz', timeout=3)"]
+      interval: 5s
+      timeout: 4s
+      retries: 30
+      start_period: 5s
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    restart: unless-stopped
+    mem_limit: 92m   # kernel's memory.peak 79.36 MiB x 1.15 (docs/validation/memory_limits.md)
+
+  # ---- Stamp 2: a second copy of the parts that grow with the number of cameras. The demo company C is served by it.
+  postgres-s2:
+    image: postgres:17.11-alpine@sha256:eee6c6e1b0894fa4fe0075eb054af9fd1cf39a35321c2d4110626cfe506411fb
+    depends_on:
+      init: { condition: service_completed_successfully }
+    environment:
+      POSTGRES_USER: ccc
+      POSTGRES_DB: ccc
+      POSTGRES_PASSWORD_FILE: /run/secret/db_password
+    volumes:
+      - pgdata2:/var/lib/postgresql/data
+      - type: volume
+        source: secrets
+        target: /run/secret
+        read_only: true
+        volume:
+          subpath: postgres2
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ccc -d ccc"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+    mem_limit: 512m   # shared_buffers is 128MB by default; 512 MiB is the author's decision, not a PostgreSQL rule (docs/validation/memory_limits.md)
+
+  mosquitto-s2:
+    image: eclipse-mosquitto:2.1.2-alpine@sha256:860aeb5d63ce509508f6dcfb2bc8a1c1dd2bc60555b562b45ce90e52d8dabb0f
+    entrypoint: ["sh", "/entrypoint.sh"]
+    depends_on:
+      init: { condition: service_completed_successfully }
+    volumes:
+      - ./infra/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - ./infra/mosquitto/entrypoint.sh:/entrypoint.sh:ro
+      - dynsec2:/mosquitto/dynsec
+      - type: volume
+        source: secrets
+        target: /run/secret
+        read_only: true
+        volume:
+          subpath: mosquitto2
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z 127.0.0.1 1883"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+    mem_limit: 12m   # kernel's memory.peak 10.0 MiB x 1.15 (docs/validation/memory_limits.md)
+
+  valkey-s2:
+    image: valkey/valkey:9.1.2-alpine@sha256:48332870af354a799964c0012ae1194a0bf2bf894eb508f945810596dc2d8d11
+    user: "999:999"
+    command:
+      - valkey-server
+      - --aclfile
+      - /run/secret/users.acl
+      - --appendonly
+      - "yes"
+      - --maxmemory
+      - 256mb
+      - --maxmemory-policy
+      - noeviction
+    networks: [stamp2]
+    volumes:
+      - valkeydata2:/data
+      - type: volume
+        source: secrets
+        target: /run/secret
+        read_only: true
+        volume:
+          subpath: valkey2
+    healthcheck:
+      test: ["CMD-SHELL", "valkey-cli ping | grep -qE 'PONG|NOAUTH'"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    restart: unless-stopped
+    # not highest x 1.15 (53.6 MiB): the queue may grow to its `maxmemory` of 256mb, which has to fit under this limit (docs/validation/memory_limits.md)
+    mem_limit: 320m
+
+  writer-s2:
+    image: ccc-api:3.0
+    command: ["uvicorn", "--factory", "app.writer:build_app", "--host", "0.0.0.0", "--port", "8000"]
+    depends_on:
+      init: { condition: service_completed_successfully }
+      postgres-s2: { condition: service_healthy }
+      mosquitto-s2: { condition: service_healthy }
+      valkey-s2: { condition: service_healthy }
+      api: { condition: service_healthy }
+    networks: [default, stamp2]
+    environment:
+      DATABASE_URL: postgresql://ccc@postgres-s2:5432/ccc
+      DATABASE_PASSWORD_FILE: db_password
+      STAMP_ID: "2"
+      SECRETS_DIR: /run/secret
+      MQTT_HOST: mosquitto-s2
+      VALKEY_HOST: valkey-s2
+      ANNOUNCE_RECORDED: "false"
+    volumes:
+      - type: volume
+        source: secrets
+        target: /run/secret
+        read_only: true
+        volume:
+          subpath: stamp2
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/healthz', timeout=3)"]
+      interval: 5s
+      timeout: 4s
+      retries: 30
+      start_period: 5s
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    restart: unless-stopped
+    mem_limit: 85m   # kernel's memory.peak 73.39 MiB x 1.15 (docs/validation/memory_limits.md)
+
+  mediamtx-s2:
+    image: bluenviron/mediamtx:1.21.2-ffmpeg@sha256:c0feb4acc548d5f410d57d9046f62dfa355e2abc4098f5243de9e86430c77a95
+    depends_on:
+      init: { condition: service_completed_successfully }
+      api: { condition: service_healthy }
+      writer-s2: { condition: service_healthy }
+    volumes:
+      - ./infra/mediamtx/mediamtx-s2.yml:/mediamtx.yml:ro
+      - ./infra/mediamtx/segment-hook-s2.sh:/segment-hook.sh:ro
+      - recordings2:/recordings
+      - type: volume
+        source: secrets
+        target: /run/secret
+        read_only: true
+        volume:
+          subpath: mediamtx2
+    ports:
+      - "127.0.0.1:8889:8888"
+      - "127.0.0.1:9998:9996"
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z 127.0.0.1 9996 && nc -z 127.0.0.1 8554"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+    mem_limit: 45m   # kernel's memory.peak 38.89 MiB x 1.15 (docs/validation/memory_limits.md)
+
+  # Three simulated cameras. Each mounts only its own secret.
+  cam-a1:
+    <<: *camera
+    environment:
+      CAMERA_ID: 30000000-0000-4000-8000-0000000000a1
+    volumes:
+      - type: volume
+        source: secrets
+        target: /run/secret
+        read_only: true
+        volume:
+          subpath: cameras/30000000-0000-4000-8000-0000000000a1
+
+  cam-a2:
+    <<: *camera
+    environment:
+      CAMERA_ID: 30000000-0000-4000-8000-0000000000a2
+    volumes:
+      - type: volume
+        source: secrets
+        target: /run/secret
+        read_only: true
+        volume:
+          subpath: cameras/30000000-0000-4000-8000-0000000000a2
+
+  cam-b1:
+    <<: *camera
+    environment:
+      CAMERA_ID: 30000000-0000-4000-8000-0000000000b1
+    volumes:
+      - type: volume
+        source: secrets
+        target: /run/secret
+        read_only: true
+        volume:
+          subpath: cameras/30000000-0000-4000-8000-0000000000b1
+
+  # A camera of company C: its broker and video server are those of stamp 2.
+  cam-c1:
+    <<: *camera
+    depends_on:
+      init: { condition: service_completed_successfully }
+      gateway: { condition: service_healthy }
+      mosquitto-s2: { condition: service_healthy }
+      mediamtx-s2: { condition: service_healthy }
+    environment:
+      CAMERA_ID: 30000000-0000-4000-8000-0000000000c1
+      MQTT_HOST: mosquitto-s2
+      RTSP_BASE: rtsp://mediamtx-s2:8554
+    volumes:
+      - type: volume
+        source: secrets
+        target: /run/secret
+        read_only: true
+        volume:
+          subpath: cameras/30000000-0000-4000-8000-0000000000c1
+
+  # ---- The workers that look at stamp 1's recordings (profile `vision`; a plain `docker compose up` does not start them
+  # and works on a machine without a GPU). They are on the queue's internal network only: no port, no database, no API.
+  # The recordings, the model files, and the list of cameras that are looked at are mounted read only. Start with:
+  #   docker compose --profile vision up -d motion classify cam-b2
+  motion:
+    profiles: [vision]
+    build:
+      context: .
+      dockerfile: services/vision/Dockerfile
+    image: ccc-vision:3.0
+    command: ["python", "-m", "vision.motion"]
+    depends_on:
+      init: { condition: service_completed_successfully }
+      valkey: { condition: service_healthy }
+      writer: { condition: service_healthy }
+    networks: [stamp1]
+    environment:
+      VALKEY_HOST: valkey
+      VALKEY_USER: motion
+      VALKEY_PASSWORD_FILE: /run/secret/valkey_password
+      RECORDINGS_DIR: /recordings
+      CAMERAS_FILE: /run/vision/cameras.txt
+    volumes:
+      - recordings:/recordings:ro
+      # the folder, not the file: tools/setup_check_camera.py replaces the file
+      - ./var/vision:/run/vision:ro
+      - type: volume
+        source: secrets
+        target: /run/secret
+        read_only: true
+        volume:
+          subpath: vision1/motion
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    restart: unless-stopped
+    mem_limit: 106m   # kernel's memory.peak 91.95 MiB x 1.15 (docs/validation/memory_limits.md)
+
+  # Needs a GPU. It stops at start when there is none or when the weights do not fill the model, and is not started again
+  # more than 3 times.
+  classify:
+    profiles: [vision]
+    image: ccc-vision:3.0
+    command: ["python", "-m", "vision.classify"]
+    depends_on:
+      init: { condition: service_completed_successfully }
+      valkey: { condition: service_healthy }
+      writer: { condition: service_healthy }
+    networks: [stamp1]
+    environment:
+      VALKEY_HOST: valkey
+      VALKEY_USER: classify
+      VALKEY_PASSWORD_FILE: /run/secret/valkey_password
+      RECORDINGS_DIR: /recordings
+      MODEL_DIR: /models/detr-resnet-50
+      HF_HUB_OFFLINE: "1"
+    volumes:
+      - recordings:/recordings:ro
+      - ./var/models/detr-resnet-50:/models/detr-resnet-50:ro
+      - ./var/check:/check:ro
+      - type: volume
+        source: secrets
+        target: /run/secret
+        read_only: true
+        volume:
+          subpath: vision1/classify
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    restart: "on-failure:3"
+    # 20 s instead of Compose's 10 s: room for the picture being named when the stop comes. It was added when an earlier
+    # test, which searches the whole output of `docker compose ps` for the digits 9997, failed because this container's
+    # configuration hash happened to contain them; the hash changed with it (docs/validation/acceptance.md).
+    stop_grace_period: 20s
+    mem_limit: 1624m   # kernel's memory.peak 1411.51 MiB x 1.15 (docs/validation/memory_limits.md)
+
+  # The camera of the check video (company B). `python tools/setup_check_camera.py` registers it through the API, puts its
+  # secret in the volume `checkcam` and its id in var/vision/cameras.txt; until then this container waits. It streams
+  # var/bbb/check_clip.mp4 again and again.
+  cam-b2:
+    <<: *camera
+    profiles: [vision]
+    environment:
+      SOURCE_FILE: /clip/check_clip.mp4
+      CRED_FILE: /cred/credentials.json
+    volumes:
+      - ./var/bbb:/clip:ro
+      - checkcam:/cred:ro
+
+  # A camera that has no secret yet. It asks Keycloak for a code (device authorization grant), prints the code and the
+  # address, waits for a tenant administrator to approve, registers itself once, and keeps only its own secret.
+  #   docker compose --profile device up -d cam-device
+  cam-device:
+    <<: *camera
+    profiles: [device]
+    depends_on:
+      init: { condition: service_completed_successfully }
+      gateway: { condition: service_healthy }
+      keycloak: { condition: service_healthy }
+    environment:
+      ENROLL: device
+      DEVICE_NAME: Device camera
+      DATA_DIR: /data
+    volumes:
+      - devicecam:/data
+
+volumes:
+  secrets:
+  pgdata:
+  recordings:
+  dynsec:
+  valkeydata:
+  pgdata2:
+  dynsec2:
+  recordings2:
+  valkeydata2:
+  devicecam:
+  checkcam:
+
+networks:
+  # The network of stamp 1's queue: the queue and its writer only.
+  stamp1:
+    internal: true
+  # The same for stamp 2.
+  stamp2:
+    internal: true

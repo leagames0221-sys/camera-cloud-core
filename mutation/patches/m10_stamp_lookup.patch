@@ -1,0 +1,13 @@
+diff --git a/services/api/app/api.py b/services/api/app/api.py
+index 90aa881..4ef09bb 100644
+--- a/services/api/app/api.py
++++ b/services/api/app/api.py
+@@ -60,7 +60,7 @@ class Deps:
+         """Where the tenant's video, broker and token audience are (the stamp the tenant belongs to)."""
+         if self.stamps is None:
+             return StampInfo.from_settings(self.settings)
+-        return self.stamps.info(tenant.stamp_id)
++        return self.stamps.info(1)
+ 
+ 
+ @dataclass

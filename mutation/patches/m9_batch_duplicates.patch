@@ -1,0 +1,12 @@
+diff --git a/services/api/app/intake.py b/services/api/app/intake.py
+index 55735e3..b7242d4 100644
+--- a/services/api/app/intake.py
++++ b/services/api/app/intake.py
+@@ -77,6 +77,7 @@ def segment_row(f: dict) -> SegmentRow:
+ def newest_state_per_camera(rows: list[StateRow]) -> list[StateRow]:
+     """One row per camera, the one that arrived last. A single INSERT ... ON CONFLICT DO UPDATE fails if it would touch
+     a row twice, so the batch must not hold the same camera twice."""
++    return rows
+     best: dict[uuid.UUID, StateRow] = {}
+     for r in rows:
+         if r.camera_id not in best or r.seen_at >= best[r.camera_id].seen_at:

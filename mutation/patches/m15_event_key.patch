@@ -1,0 +1,12 @@
+diff --git a/services/api/app/intake.py b/services/api/app/intake.py
+index 0d3d360..eacc767 100644
+--- a/services/api/app/intake.py
++++ b/services/api/app/intake.py
+@@ -216,7 +216,6 @@ WITH ok AS (
+ ), ins AS (
+     INSERT INTO events (camera_id, tenant_id, kind, label, started_at, duration_ms, score, model)
+     SELECT camera_id, tenant_id, kind, label, started_at, duration_ms, score, model FROM ok
+-    ON CONFLICT (camera_id, kind, label, started_at) DO NOTHING
+     RETURNING 1
+ )
+ SELECT (SELECT count(*) FROM ok) AS known, (SELECT count(*) FROM ins) AS written

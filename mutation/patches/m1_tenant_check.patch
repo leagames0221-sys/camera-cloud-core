@@ -1,0 +1,13 @@
+diff --git a/services/api/app/rules.py b/services/api/app/rules.py
+index 6328ce8..7347334 100644
+--- a/services/api/app/rules.py
++++ b/services/api/app/rules.py
+@@ -49,7 +49,7 @@ def roles_in_tenant(memberships: list[Membership], tenant: Tenant) -> set[str]:
+         if m.role == PARTNER_ADMIN:
+             if m.partner_id == tenant.partner_id:
+                 roles.add(PARTNER_ADMIN)
+-        elif m.tenant_id == tenant.id:
++        elif m.tenant_id is not None:
+             roles.add(m.role)
+     return roles
+ 

@@ -1,0 +1,13 @@
+diff --git a/services/api/app/dynsec.py b/services/api/app/dynsec.py
+index c99fd8d..34747bd 100644
+--- a/services/api/app/dynsec.py
++++ b/services/api/app/dynsec.py
+@@ -23,7 +23,7 @@ RESPONSE_TOPIC = "$CONTROL/dynamic-security/v1/response"
+ CAMERA_ROLE = "camera"
+ INGEST_ROLE = "ingest"
+ INGEST_USER = "ingest"
+-CAMERA_STATE_TOPIC_ACL = "cameras/%c/state"
++CAMERA_STATE_TOPIC_ACL = "cameras/+/state"
+ INGEST_TOPIC_FILTER = "cameras/+/state"
+ 
+ 

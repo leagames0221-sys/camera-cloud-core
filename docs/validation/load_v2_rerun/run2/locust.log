@@ -1,0 +1,637 @@
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+/usr/local/lib/python3.12/site-packages/locust/contrib/mqtt.py:108: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  super().__init__(*args, client_id=client_id, protocol=protocol, **kwargs)
+Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+GET      GET /tenants/{t}/cameras                                                        5062     0(0.00%) |     41       8     153     40 |   16.66        0.00
+GET      GET /tenants/{t}/cameras/{c}                                                    5061     0(0.00%) |     41       7     160     39 |   16.66        0.00
+GET      GET /tenants/{t}/cameras/{c}/segments                                           5062     0(0.00%) |     41       8     151     40 |   16.66        0.00
+POST     POST segment call                                                              30388     0(0.00%) |      1       0      35      1 |  100.03        0.00
+MQTT     connect                                                                            8     0(0.00%) |      0       0       0      0 |    0.03        0.00
+MQTT     publish:1:cameras/+/state                                                      91012     0(0.00%) |      0       0      18      1 |  299.60        0.00
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+         Aggregated                                                                    136593     0(0.00%) |      5       0     160      1 |  449.64        0.00
+
+Response time percentiles (approximated)
+Type     Name                                                                                  50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100% # reqs
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+GET      GET /tenants/{t}/cameras                                                               40     47     52     56     69     85    100    110    140    150    150   5062
+GET      GET /tenants/{t}/cameras/{c}                                                           39     46     51     55     70     84    100    110    140    160    160   5061
+GET      GET /tenants/{t}/cameras/{c}/segments                                                  40     47     52     56     70     84    100    110    140    150    150   5062
+POST     POST segment call                                                                       1      1      1      1      2      2      2      7     20     31     36  30388
+MQTT     connect                                                                                 0      0      0      0      0      0      0      0      0      0      0      8
+MQTT     publish:1:cameras/+/state                                                               1      1      1      1      1      2      2      3     10     14     18  91012
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+         Aggregated                                                                              1      1      1      1     17     42     58     72    110    140    160 136593
+
+Traceback (most recent call last):
+  File "src/gevent/greenlet.py", line 912, in gevent._gevent_cgreenlet.Greenlet.run
+  File "/usr/local/lib/python3.12/site-packages/locust/stats.py", line 1170, in stats_writer
+    self.requests_csv_filehandle.seek(requests_csv_data_start)
+ValueError: I/O operation on closed file.
+2026-10-26T11:44:00Z <Greenlet at 0x7d9aa43f4d60: <bound method StatsCSVFileWriter.stats_writer of <locust.stats.StatsCSVFileWriter object at 0x7d9aa4331130>>> failed with ValueError
+
+[2026-10-26 11:44:00,807] 6ed3a4db4903/CRITICAL/locust.main: Unhandled exception in greenlet: <Greenlet at 0x7d9aa43f4d60: <bound method StatsCSVFileWriter.stats_writer of <locust.stats.StatsCSVFileWriter object at 0x7d9aa4331130>>>
+Traceback (most recent call last):
+  File "src/gevent/greenlet.py", line 912, in gevent._gevent_cgreenlet.Greenlet.run
+  File "/usr/local/lib/python3.12/site-packages/locust/stats.py", line 1170, in stats_writer
+    self.requests_csv_filehandle.seek(requests_csv_data_start)
+    ^^^^^^^^^^^^^^^^^
+ValueError: I/O operation on closed file.

@@ -1,0 +1,235 @@
+{
+  "realm": "ccc",
+  "displayName": "camera-cloud-core",
+  "enabled": true,
+  "sslRequired": "external",
+  "registrationAllowed": false,
+  "resetPasswordAllowed": false,
+  "rememberMe": false,
+  "loginWithEmailAllowed": false,
+  "duplicateEmailsAllowed": false,
+  "bruteForceProtected": true,
+  "accessTokenLifespan": 300,
+  "identityProviders": [],
+  "identityProviderMappers": [],
+  "clients": [
+    {
+      "clientId": "ccc-web",
+      "name": "Viewing page",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": true,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "redirectUris": [
+        "http://localhost:8000/"
+      ],
+      "webOrigins": [
+        "http://localhost:8000"
+      ],
+      "baseUrl": "http://localhost:8000/",
+      "attributes": {
+        "pkce.code.challenge.method": "S256",
+        "post.logout.redirect.uris": "http://localhost:8000/",
+        "oauth2.device.authorization.grant.enabled": "false"
+      }
+    },
+    {
+      "clientId": "ccc-device",
+      "name": "Camera registration (device authorization grant)",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": true,
+      "standardFlowEnabled": false,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "consentRequired": true,
+      "fullScopeAllowed": false,
+      "defaultClientScopes": [
+        "basic"
+      ],
+      "optionalClientScopes": [],
+      "attributes": {
+        "oauth2.device.authorization.grant.enabled": "true",
+        "oauth2.device.code.lifespan": "600",
+        "oauth2.device.polling.interval": "5",
+        "use.refresh.tokens": "false",
+        "display.on.consent.screen": "true",
+        "consent.screen.text": "Register a camera in your tenant (カメラをテナントに登録する)"
+      },
+      "protocolMappers": [
+        {
+          "name": "enroll-audience",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-audience-mapper",
+          "consentRequired": false,
+          "config": {
+            "included.custom.audience": "ccc-enroll",
+            "access.token.claim": "true",
+            "id.token.claim": "false",
+            "introspection.token.claim": "true",
+            "lightweight.claim": "false"
+          }
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "40000000-0000-4000-8000-0000000000f0",
+      "username": "partner-admin",
+      "enabled": true,
+      "emailVerified": true,
+      "email": "partner-admin@example.test",
+      "firstName": "デモ",
+      "lastName": "パートナー管理者",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "${DEMO_USER_PASSWORD}",
+          "temporary": false
+        }
+      ],
+      "requiredActions": []
+    },
+    {
+      "id": "40000000-0000-4000-8000-0000000000a1",
+      "username": "a-admin",
+      "enabled": true,
+      "emailVerified": true,
+      "email": "a-admin@example.test",
+      "firstName": "A 社",
+      "lastName": "管理者",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "${DEMO_USER_PASSWORD}",
+          "temporary": false
+        }
+      ],
+      "requiredActions": []
+    },
+    {
+      "id": "40000000-0000-4000-8000-0000000000a2",
+      "username": "a-viewer",
+      "enabled": true,
+      "emailVerified": true,
+      "email": "a-viewer@example.test",
+      "firstName": "A 社",
+      "lastName": "閲覧者",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "${DEMO_USER_PASSWORD}",
+          "temporary": false
+        }
+      ],
+      "requiredActions": []
+    },
+    {
+      "id": "40000000-0000-4000-8000-0000000000b1",
+      "username": "b-admin",
+      "enabled": true,
+      "emailVerified": true,
+      "email": "b-admin@example.test",
+      "firstName": "B 社",
+      "lastName": "管理者",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "${DEMO_USER_PASSWORD}",
+          "temporary": false
+        }
+      ],
+      "requiredActions": []
+    },
+    {
+      "id": "40000000-0000-4000-8000-0000000000b2",
+      "username": "b-viewer",
+      "enabled": true,
+      "emailVerified": true,
+      "email": "b-viewer@example.test",
+      "firstName": "B 社",
+      "lastName": "閲覧者",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "${DEMO_USER_PASSWORD}",
+          "temporary": false
+        }
+      ],
+      "requiredActions": []
+    },
+    {
+      "id": "40000000-0000-4000-8000-0000000000e1",
+      "username": "l-admin",
+      "enabled": true,
+      "emailVerified": true,
+      "email": "l-admin@example.test",
+      "firstName": "Load test",
+      "lastName": "tenant admin",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "${DEMO_USER_PASSWORD}",
+          "temporary": false
+        }
+      ],
+      "requiredActions": []
+    },
+    {
+      "id": "40000000-0000-4000-8000-0000000000e2",
+      "username": "l-viewer",
+      "enabled": true,
+      "emailVerified": true,
+      "email": "l-viewer@example.test",
+      "firstName": "Load test",
+      "lastName": "viewer",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "${DEMO_USER_PASSWORD}",
+          "temporary": false
+        }
+      ],
+      "requiredActions": []
+    },
+    {
+      "id": "40000000-0000-4000-8000-0000000000c1",
+      "username": "c-admin",
+      "enabled": true,
+      "emailVerified": true,
+      "email": "c-admin@example.test",
+      "firstName": "C 社",
+      "lastName": "管理者",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "${DEMO_USER_PASSWORD}",
+          "temporary": false
+        }
+      ],
+      "requiredActions": []
+    },
+    {
+      "id": "40000000-0000-4000-8000-0000000000c2",
+      "username": "c-viewer",
+      "enabled": true,
+      "emailVerified": true,
+      "email": "c-viewer@example.test",
+      "firstName": "C 社",
+      "lastName": "閲覧者",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "${DEMO_USER_PASSWORD}",
+          "temporary": false
+        }
+      ],
+      "requiredActions": []
+    }
+  ]
+}

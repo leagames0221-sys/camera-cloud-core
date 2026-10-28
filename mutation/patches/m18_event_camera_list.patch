@@ -1,0 +1,13 @@
+diff --git a/services/api/app/intake.py b/services/api/app/intake.py
+index 72176c7..00c5fb1 100644
+--- a/services/api/app/intake.py
++++ b/services/api/app/intake.py
+@@ -407,7 +407,7 @@ async def write_group(sink: Sink, queue: Queue, counters: Counters,
+                 evs.append(event_row(f))
+             except (KeyError, ValueError):
+                 counters.add("event_unreadable")
+-        if event_cameras is not None:
++        if False:
+             looked_at = event_cameras()
+             kept = [e for e in evs if e.camera_id in looked_at]
+             if len(kept) < len(evs):    # a camera the workers do not look at: whoever wrote it, it is not taken

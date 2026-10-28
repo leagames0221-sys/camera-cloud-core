@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="same-origin">
+<title>カメラ録画ビューア</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <h1>カメラ録画ビューア</h1>
+  <div class="who">
+    <label>テナント <select id="tenant" aria-label="テナント"></select></label>
+    <span id="user"></span>
+    <button id="logout" type="button">ログアウト</button>
+  </div>
+</header>
+
+<main>
+  <p id="status" role="status">読み込み中…</p>
+
+  <section id="list-section" hidden>
+    <h2>カメラ一覧</h2>
+    <table id="cameras">
+      <thead><tr><th>名前</th><th>状態</th><th>fps</th><th>ビットレート</th><th></th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <div id="add-camera" hidden>
+      <h3>カメラを追加</h3>
+      <p>新しいカメラの画面（またはログ）に出ているコードを、次の画面で入力して承認します。承認するとカメラはこのテナントに登録され、しばらくすると一覧に出ます。</p>
+      <p><a id="add-camera-link" href="#" target="_blank" rel="noopener">カメラを追加（コードを入力する画面を開く）</a></p>
+    </div>
+  </section>
+
+  <section id="viewer-section" hidden>
+    <p><a id="back" href="#/">← 一覧に戻る</a></p>
+    <h2 id="viewer-title"></h2>
+    <div class="buttons">
+      <button id="btn-live" type="button">ライブ</button>
+      <button id="btn-past" type="button">過去 5 分を再生</button>
+    </div>
+    <video id="video" controls muted playsinline></video>
+    <p id="viewer-msg" role="status"></p>
+    <h3>出来事</h3>
+    <p id="events-empty" hidden>出来事はありません。</p>
+    <table id="events">
+      <thead><tr><th>時刻</th><th>種類</th><th>物の名前</th><th>点数</th><th></th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <p><button id="events-more" type="button" hidden>続きを読む</button></p>
+  </section>
+
+  <section id="notfound" hidden>
+    <h2>見つかりません</h2>
+    <p>指定されたカメラは存在しないか、あなたには表示できません。</p>
+    <p><a href="#/">一覧に戻る</a></p>
+  </section>
+</main>
+
+<script src="/config.js"></script>
+<script src="/vendor/hls.min.js"></script>
+<script type="module" src="/app.js"></script>
+</body>
+</html>

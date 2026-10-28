@@ -1,0 +1,17 @@
+{
+  "run_id": "v1-1-1792852379",
+  "start_epoch": 1792852380.1923664,
+  "elapsed_s": 347.11786556243896,
+  "locust_exit_code": 0,
+  "pg_before": {
+    "tup_inserted": 10996,
+    "tup_updated": 27594,
+    "xact_commit": 199134
+  },
+  "pg_after": {
+    "tup_inserted": 43522,
+    "tup_updated": 123886,
+    "xact_commit": 844130
+  },
+  "host_time_utc": "2026-10-24T14:33:00.192366+00:00"
+}

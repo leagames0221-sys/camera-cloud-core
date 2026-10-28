@@ -1,0 +1,13 @@
+diff --git a/services/vision/vision/motion_core.py b/services/vision/vision/motion_core.py
+index bb8c0a2..8b07ac6 100644
+--- a/services/vision/vision/motion_core.py
++++ b/services/vision/vision/motion_core.py
+@@ -41,7 +41,7 @@ def make_subtractor(p: MotionParams):
+ 
+ def foreground_share(mask: np.ndarray) -> float:
+     """The share of the picture that is foreground. A shadow (127) is not foreground."""
+-    return float(np.count_nonzero(mask == FOREGROUND)) / mask.size
++    return float(np.count_nonzero(mask > 0)) / mask.size
+ 
+ 
+ @dataclass(frozen=True)

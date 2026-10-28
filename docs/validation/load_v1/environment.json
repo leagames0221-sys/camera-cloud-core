@@ -1,0 +1,58 @@
+{
+  "time_utc": "2026-10-24T14:32:42+00:00",
+  "docker_cpus": 16,
+  "docker_memory_bytes": 16768462848,
+  "wslconfig": "[wsl2]\nmemory=16GB\nprocessors=16\nswap=8GB\nswapFile=C:\\\\wsl\\\\swap.vhdx\n[experimental]\nautoMemoryReclaim=gradual",
+  "containers": {
+    "camera-cloud-core-mediamtx-1": {
+      "image_id": "sha256:c0feb4acc548d5f410d57d9046f62dfa355e2abc4098f5243de9e86430c77a95",
+      "cpus": 1.0,
+      "memory_mib": 512.0
+    },
+    "camera-cloud-core-gateway-1": {
+      "image_id": "sha256:c150ab4e05d731a1ecee172cd84671e90d9e2355a8217549616800f9f44f9b32",
+      "cpus": 1.0,
+      "memory_mib": 128.0
+    },
+    "camera-cloud-core-api-1": {
+      "image_id": "sha256:e266beb5bf6ae7a93fd572c2e60026316b23ae1ab4a6c5f27cf9e16a0f084a3f",
+      "cpus": 2.5,
+      "memory_mib": 256.0
+    },
+    "camera-cloud-core-mosquitto-1": {
+      "image_id": "sha256:860aeb5d63ce509508f6dcfb2bc8a1c1dd2bc60555b562b45ce90e52d8dabb0f",
+      "cpus": 0.5,
+      "memory_mib": 128.0
+    },
+    "camera-cloud-core-postgres-1": {
+      "image_id": "sha256:eee6c6e1b0894fa4fe0075eb054af9fd1cf39a35321c2d4110626cfe506411fb",
+      "cpus": 1.0,
+      "memory_mib": 256.0
+    },
+    "camera-cloud-core-locust-1": {
+      "image_id": "sha256:f19e0554930fa460626dbc87c5d1f93ceb572891706fcee0395556e0e1054695",
+      "cpus": 2.0,
+      "memory_mib": 1024.0
+    },
+    "camera-cloud-core-keycloak-1": {
+      "image_id": "sha256:a78d6b79572168cb25886b80a8b5b8d4ed4390743e3eecb810538683e209dd6b",
+      "cpus": null,
+      "memory_mib": 1024.0
+    },
+    "camera-cloud-core-cam-b1-1": {
+      "image_id": "sha256:7be5991672a29ee2fb82fc56f1c742e255d35bfde55c5eec58ea1070fb3a89c8",
+      "cpus": null,
+      "memory_mib": 256.0
+    },
+    "camera-cloud-core-cam-a2-1": {
+      "image_id": "sha256:7be5991672a29ee2fb82fc56f1c742e255d35bfde55c5eec58ea1070fb3a89c8",
+      "cpus": null,
+      "memory_mib": 256.0
+    },
+    "camera-cloud-core-cam-a1-1": {
+      "image_id": "sha256:7be5991672a29ee2fb82fc56f1c742e255d35bfde55c5eec58ea1070fb3a89c8",
+      "cpus": null,
+      "memory_mib": 256.0
+    }
+  }
+}

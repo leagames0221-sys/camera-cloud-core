@@ -1,0 +1,5 @@
+# Two more packages for the unit tests of the vision workers (numpy and OpenCV), for Windows with CPython 3.12. The hashes are those
+# of the wheels; checked against OSV on 2026-10-25. They go into the same virtual environment as requirements.lock.txt (the README
+# gives the command).
+numpy==2.5.4 --hash=sha256:a7b1b6353e36a7e50de2973a38d705c88ee93adcf120673cee7f45a4a3fa223a
+opencv-python-headless==4.14.0.94 --hash=sha256:cbed65415b8f6a9541c705afe3e64795840524d0ff3bc58f507826284a1dc64b

@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "stamp 1",
+    "database_dsn": "postgresql://ccc@postgres:5432/ccc",
+    "mqtt_host": "mosquitto",
+    "mqtt_port": 1883,
+    "mediamtx_control_url": "http://mediamtx:9997",
+    "public_hls_url": "http://localhost:8888",
+    "public_playback_url": "http://localhost:9996",
+    "public_rtsp_url": "rtsp://mediamtx:8554",
+    "public_mqtt_url": "mqtt://mosquitto:1883",
+    "jwt_audience": "mediamtx"
+  },
+  {
+    "id": 2,
+    "name": "stamp 2",
+    "database_dsn": "postgresql://ccc@postgres-s2:5432/ccc",
+    "database_password_file": "/run/secret/stamp2_db_password",
+    "mqtt_host": "mosquitto-s2",
+    "mqtt_port": 1883,
+    "mqtt_admin_password_file": "/run/secret/stamp2_mqtt_admin_password",
+    "mediamtx_control_url": "http://mediamtx-s2:9997",
+    "public_hls_url": "http://localhost:8889",
+    "public_playback_url": "http://localhost:9998",
+    "public_rtsp_url": "rtsp://mediamtx-s2:8554",
+    "public_mqtt_url": "mqtt://mosquitto-s2:1883",
+    "jwt_audience": "mediamtx-s2"
+  }
+]

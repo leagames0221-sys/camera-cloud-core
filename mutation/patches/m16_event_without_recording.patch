@@ -1,0 +1,13 @@
+diff --git a/services/api/app/intake.py b/services/api/app/intake.py
+index 72176c7..26d5c97 100644
+--- a/services/api/app/intake.py
++++ b/services/api/app/intake.py
+@@ -235,7 +235,7 @@ WITH ok AS (
+     WHERE EXISTS (
+         SELECT 1 FROM recording_segments s
+         WHERE s.camera_id = u.camera_id AND s.tenant_id = u.tenant_id AND NOT s.deleted
+-          AND s.started_at <= u.started_at
++          AND true
+           AND u.started_at < s.started_at + COALESCE(s.duration_ms, 120000) * interval '1 millisecond'
+           AND u.started_at + u.duration_ms * interval '1 millisecond'
+               <= s.started_at + (COALESCE(s.duration_ms, 120000) + 1000) * interval '1 millisecond')

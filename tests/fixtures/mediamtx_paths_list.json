@@ -1,0 +1,49 @@
+{
+  "itemCount": 1,
+  "pageCount": 1,
+  "items": [
+    {
+      "name": "11111111-1111-4111-8111-111111111111/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+      "confName": "all_others",
+      "ready": true,
+      "readyTime": "2026-10-24T08:07:45.066833085Z",
+      "available": true,
+      "availableTime": "2026-10-24T08:07:45.066833085Z",
+      "online": true,
+      "onlineTime": "2026-10-24T08:07:45.066835265Z",
+      "source": {
+        "type": "rtspSession",
+        "id": "92bc34ac-ae48-4c8b-8cf6-12ae24a8e406"
+      },
+      "tracks": [
+        "H264"
+      ],
+      "tracks2": [
+        {
+          "codec": "H264",
+          "codecProps": {
+            "width": 640,
+            "height": 360,
+            "profile": "Baseline",
+            "level": "2.2"
+          }
+        }
+      ],
+      "readers": [
+        {
+          "type": "hlsSession",
+          "id": "5818c200-7f1c-4fd2-acad-635b0821a1e8"
+        },
+        {
+          "type": "hlsSession",
+          "id": "bff1f0ed-67f3-4c6f-b985-d4eefe51dd94"
+        }
+      ],
+      "inboundBytes": 639738,
+      "outboundBytes": 172928,
+      "inboundFramesInError": 0,
+      "bytesReceived": 639738,
+      "bytesSent": 172928
+    }
+  ]
+}

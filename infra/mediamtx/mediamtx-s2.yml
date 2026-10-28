@@ -1,0 +1,55 @@
+# MediaMTX 1.21.2, the copy for stamp 2. It is the file of stamp 1 with one line different: the audience, so that a video
+# token made for one stamp does not open the other (both read the same keys).
+# MediaMTX 1.21.2. Based on the settings reference of that release (mediamtx.yml in the project).
+# Most keys here differ from the defaults. A few are written with the default value of that release so that they can be
+# seen: logLevel, apiAddress, playbackAddress, hlsAddress, rtspAddress, hls, rtsp, metrics, pprof, recordFormat, recordPath,
+# recordDeleteAfter.
+
+logLevel: info
+
+# Every request is checked against a JWT that the API signs (ADR 0003). MediaMTX reads the public key from the
+# API's /jwks and keeps it for one hour, so the signing key is created once and never replaced at start-up.
+authMethod: jwt
+authJWTJWKS: http://api:8000/jwks
+authJWTIssuer: ccc-api
+# Leave audience filled: if it is empty, MediaMTX does not check it.
+authJWTAudience: mediamtx-s2
+
+# Control API: only on the compose network; it is not published to the host. The API calls it with its own
+# five-minute `api` token (ADR 0003).
+api: yes
+apiAddress: :9997
+
+playback: yes
+playbackAddress: :9996
+# Exactly the origin of the viewing page (the default is "*").
+playbackAllowOrigins: ["http://localhost:8000"]
+
+hls: yes
+hlsAddress: :8888
+hlsAllowOrigins: ["http://localhost:8000"]
+
+# Cameras publish over RTSP on TCP, with ?token=<publish JWT>.
+rtsp: yes
+rtspTransports: [tcp]
+rtspAddress: :8554
+rtmp: no
+webrtc: no
+srt: no
+moq: no
+metrics: no
+pprof: no
+
+pathDefaults:
+  record: yes
+  recordFormat: fmp4
+  # The start time is read from this file name, so the pattern is fixed.
+  recordPath: ./recordings/%path/%Y-%m-%d_%H-%M-%S-%f
+  recordSegmentDuration: 60s
+  recordDeleteAfter: 1d
+  # After each segment: tell the API's internal door (never published). A script is used because the command in this
+  # setting is not run through a shell, so `$(cat ...)` written here would be sent as literal text.
+  runOnRecordSegmentComplete: sh /segment-hook.sh
+
+paths:
+  all_others:

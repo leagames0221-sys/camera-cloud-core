@@ -1,0 +1,13 @@
+diff --git a/services/api/app/video_jwt.py b/services/api/app/video_jwt.py
+index f163b26..d6d6ee8 100644
+--- a/services/api/app/video_jwt.py
++++ b/services/api/app/video_jwt.py
+@@ -69,7 +69,7 @@ class KeyStore:
+         perm: dict = {"action": action}
+         if path is not None:
+             perm["path"] = path
+-        claims = {"iss": issuer, "aud": audience, "sub": subject, "iat": iat, "exp": exp,
++        claims = {"iss": issuer, "aud": audience, "sub": subject, "iat": iat,
+                   "jti": uuid.uuid4().hex, CLAIM_KEY: [perm]}
+         token = jwt.encode(claims, self._key, algorithm="ES256", headers={"kid": self.kid})
+         return token, exp

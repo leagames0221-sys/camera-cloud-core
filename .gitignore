@@ -1,0 +1,28 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Secrets and local settings
+.env
+# the demo values that `copy .env.example .env` starts from are committed (a global `.env.*` rule must not hide them)
+!.env.example
+*.pem
+*.key
+
+# Node: package.json and package-lock.json are committed; the installed tree is not
+web/node_modules/
+
+# Local tool settings
+.claude/
+
+# Throwaway proof output
+poc/out/
+
+# Raw output of load-test sessions (the summaries are copied to docs/validation/)
+loadtest/out/
+
+# Video and model files fetched by hand (Big Buck Bunny, model weights); never committed
+/var/
+tests/banned_words.local.txt

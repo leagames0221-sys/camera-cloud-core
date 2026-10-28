@@ -1,0 +1,13 @@
+diff --git a/services/api/app/intake.py b/services/api/app/intake.py
+index 018b055..ffdaf5e 100644
+--- a/services/api/app/intake.py
++++ b/services/api/app/intake.py
+@@ -215,7 +215,7 @@ class Queue:
+         times = {p["message_id"]: p["times_delivered"] for p in pend}
+         again, dead = [], []
+         for eid, f in entries:
+-            (dead if times.get(eid, 0) > MAX_DELIVERIES else again).append((eid, f))
++            (dead if times.get(eid, 0) >= MAX_DELIVERIES else again).append((eid, f))
+         return again, dead
+ 
+     async def bury(self, stream: str, entries: list[tuple[str, dict]]) -> None:

@@ -1,0 +1,44 @@
+# Extra file for the integration tests only:
+#  - publishes MQTT and RTSP on the loopback address, so the tests can speak to them from outside the way a camera does;
+#  - mounts the source of the later API, the writer, the gateway and the two vision workers over the copies in their images, so that the mutation
+#    runner can change the code and restart a container without rebuilding, and so that the gateway's table (which API
+#    answers which kind of call) is changed by a restart. The source is the same as in the images.
+#   docker compose -f compose.yaml -f compose.test.yaml up -d
+services:
+  mosquitto:
+    ports:
+      - "127.0.0.1:1883:1883"
+  mediamtx:
+    ports:
+      - "127.0.0.1:8554:8554"
+  api:
+    volumes:
+      - ./services/api/app:/srv/app:ro
+      - ./services/api/migrations:/srv/migrations:ro
+      - ./services/api/stamp_migrations:/srv/stamp_migrations:ro
+  init:
+    volumes:
+      - ./services/api/app:/srv/app:ro
+  writer:
+    volumes:
+      - ./services/api/app:/srv/app:ro
+  writer-s2:
+    volumes:
+      - ./services/api/app:/srv/app:ro
+  # stamp 2 on the loopback address as well (the first stamp's ports are 1883 and 8554)
+  mosquitto-s2:
+    ports:
+      - "127.0.0.1:1884:1883"
+  mediamtx-s2:
+    ports:
+      - "127.0.0.1:8555:8554"
+  gateway:
+    volumes:
+      - ./services/gateway/gateway:/srv/gateway:ro
+  # the workers of the profile `vision`: the checkout's code over the image's copy (the same source)
+  motion:
+    volumes:
+      - ./services/vision/vision:/srv/vision:ro
+  classify:
+    volumes:
+      - ./services/vision/vision:/srv/vision:ro

@@ -1,0 +1,14 @@
+diff --git a/services/api/app/intake.py b/services/api/app/intake.py
+index 72176c7..d65bbe5 100644
+--- a/services/api/app/intake.py
++++ b/services/api/app/intake.py
+@@ -237,8 +237,7 @@ WITH ok AS (
+         WHERE s.camera_id = u.camera_id AND s.tenant_id = u.tenant_id AND NOT s.deleted
+           AND s.started_at <= u.started_at
+           AND u.started_at < s.started_at + COALESCE(s.duration_ms, 120000) * interval '1 millisecond'
+-          AND u.started_at + u.duration_ms * interval '1 millisecond'
+-              <= s.started_at + (COALESCE(s.duration_ms, 120000) + 1000) * interval '1 millisecond')
++          )
+ ), ins AS (
+     INSERT INTO events (camera_id, tenant_id, kind, label, started_at, duration_ms, score, model)
+     SELECT camera_id, tenant_id, kind, label, started_at, duration_ms, score, model FROM ok

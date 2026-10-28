@@ -1,0 +1,13 @@
+diff --git a/services/vision/vision/classify_core.py b/services/vision/vision/classify_core.py
+index c38b3a9..6a262a8 100644
+--- a/services/vision/vision/classify_core.py
++++ b/services/vision/vision/classify_core.py
+@@ -36,7 +36,7 @@ def bgr_to_rgb(frame: np.ndarray) -> np.ndarray:
+ 
+ 
+ def filter_by_score(dets: Iterable[Detection], minimum: float = SCORE_MIN) -> list[Detection]:
+-    return [d for d in dets if d.score > minimum]
++    return [d for d in dets if d.score >= minimum]
+ 
+ 
+ def best_per_label(dets: Iterable[Detection]) -> list[Detection]:

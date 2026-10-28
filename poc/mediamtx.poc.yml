@@ -1,0 +1,28 @@
+logLevel: info
+authMethod: jwt
+authJWTJWKS: http://poc-jwks:8000/jwks.json
+authJWTIssuer: http://api.poc
+authJWTAudience: mediamtx
+api: yes
+apiAddress: :9997
+playback: yes
+playbackAddress: :9996
+playbackAllowOrigins: ["http://localhost:8080"]
+hls: yes
+hlsAddress: :8888
+hlsAllowOrigins: ["http://localhost:8080"]
+rtsp: yes
+rtspTransports: [tcp]
+rtspAddress: :8554
+rtmp: no
+webrtc: no
+srt: no
+pathDefaults:
+  record: yes
+  recordFormat: fmp4
+  recordPath: ./recordings/%path/%Y-%m-%d_%H-%M-%S-%f
+  recordSegmentDuration: 10s
+  recordDeleteAfter: 1d
+  runOnRecordSegmentComplete: 'wget -q -O /dev/null --header "X-Hook-Secret: poc-secret" --post-data "path=$MTX_PATH&file=$MTX_SEGMENT_PATH&duration=$MTX_SEGMENT_DURATION" http://poc-hook:8000/segment'
+paths:
+  all_others:

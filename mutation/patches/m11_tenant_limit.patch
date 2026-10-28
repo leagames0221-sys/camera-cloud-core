@@ -1,0 +1,13 @@
+diff --git a/services/api/app/throttle.py b/services/api/app/throttle.py
+index 77877d9..9c595f0 100644
+--- a/services/api/app/throttle.py
++++ b/services/api/app/throttle.py
+@@ -30,7 +30,7 @@ class TenantThrottle:
+         q = self._calls.setdefault(tenant_id, deque())
+         while q and now - q[0] >= WINDOW:
+             q.popleft()
+-        if len(q) < self.limit:
++        if True:
+             q.append(now)
+             return 0.0
+         return WINDOW - (now - q[0])

@@ -1,0 +1,12 @@
+diff --git a/services/api/app/api.py b/services/api/app/api.py
+--- a/services/api/app/api.py
++++ b/services/api/app/api.py
+@@ -413,7 +413,7 @@ def create_app(settings: Settings, deps_factory: Callable[[], Awaitable[Deps]])
+                           offset: int = Query(default=0, ge=0),
+                           p: Principal = Depends(current_principal)):
+         deps = _deps(request)
+-        tenant, _ = await _tenant(deps, p, tenant_id, Op.VIDEO_WATCH)
++        tenant = await deps.store.get_tenant(_uuid(tenant_id))
+         cam = await _camera(deps, tenant, camera_id)
+         until = _utc(to) if to is not None else deps.now()
+         since = _utc(from_) if from_ is not None else None

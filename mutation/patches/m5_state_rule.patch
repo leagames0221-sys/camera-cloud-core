@@ -1,0 +1,10 @@
+diff --git a/services/api/app/rules.py b/services/api/app/rules.py
+index 6328ce8..3f320c9 100644
+--- a/services/api/app/rules.py
++++ b/services/api/app/rules.py
+@@ -95,4 +95,4 @@ def derive_state(status: CameraStatus | None, path_ready: bool) -> str:
+     """online + path ready = recording; online + no path = standby; offline or unknown = disconnected."""
+     if status is None or status.state != "online":
+         return "disconnected"
+-    return "recording" if path_ready else "standby"
++    return "recording"

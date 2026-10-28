@@ -1,0 +1,68 @@
+{
+  "time_utc": "2026-10-24T16:45:28+00:00",
+  "docker_cpus": 16,
+  "docker_memory_bytes": 16768462848,
+  "wslconfig": "[wsl2]\nmemory=16GB\nprocessors=16\nswap=8GB\nswapFile=C:\\\\wsl\\\\swap.vhdx\n[experimental]\nautoMemoryReclaim=gradual",
+  "containers": {
+    "camera-cloud-core-writer-1": {
+      "image_id": "sha256:70b57299bf8e7e29bc083ea7b49586d0fd016bf41766aec084ef21e53eec19b3",
+      "cpus": 1.0,
+      "memory_mib": 256.0
+    },
+    "camera-cloud-core-api-1": {
+      "image_id": "sha256:70b57299bf8e7e29bc083ea7b49586d0fd016bf41766aec084ef21e53eec19b3",
+      "cpus": 1.0,
+      "memory_mib": 256.0
+    },
+    "camera-cloud-core-mediamtx-1": {
+      "image_id": "sha256:c0feb4acc548d5f410d57d9046f62dfa355e2abc4098f5243de9e86430c77a95",
+      "cpus": 1.0,
+      "memory_mib": 512.0
+    },
+    "camera-cloud-core-gateway-1": {
+      "image_id": "sha256:2139f83217707fa35ea8ace9e48a4194f625ca86784e3afcab1fd15db4108127",
+      "cpus": 1.0,
+      "memory_mib": 128.0
+    },
+    "camera-cloud-core-mosquitto-1": {
+      "image_id": "sha256:860aeb5d63ce509508f6dcfb2bc8a1c1dd2bc60555b562b45ce90e52d8dabb0f",
+      "cpus": 0.5,
+      "memory_mib": 128.0
+    },
+    "camera-cloud-core-postgres-1": {
+      "image_id": "sha256:eee6c6e1b0894fa4fe0075eb054af9fd1cf39a35321c2d4110626cfe506411fb",
+      "cpus": 1.0,
+      "memory_mib": 256.0
+    },
+    "camera-cloud-core-valkey-1": {
+      "image_id": "sha256:48332870af354a799964c0012ae1194a0bf2bf894eb508f945810596dc2d8d11",
+      "cpus": 0.5,
+      "memory_mib": 320.0
+    },
+    "camera-cloud-core-locust-1": {
+      "image_id": "sha256:f19e0554930fa460626dbc87c5d1f93ceb572891706fcee0395556e0e1054695",
+      "cpus": 2.0,
+      "memory_mib": 1024.0
+    },
+    "camera-cloud-core-cam-a1-1": {
+      "image_id": "sha256:ce3dbf28d56b840c5784aada81e9755cdfa1577ac22efbcd21388e198325cdbd",
+      "cpus": null,
+      "memory_mib": 256.0
+    },
+    "camera-cloud-core-cam-a2-1": {
+      "image_id": "sha256:ce3dbf28d56b840c5784aada81e9755cdfa1577ac22efbcd21388e198325cdbd",
+      "cpus": null,
+      "memory_mib": 256.0
+    },
+    "camera-cloud-core-cam-b1-1": {
+      "image_id": "sha256:ce3dbf28d56b840c5784aada81e9755cdfa1577ac22efbcd21388e198325cdbd",
+      "cpus": null,
+      "memory_mib": 256.0
+    },
+    "camera-cloud-core-keycloak-1": {
+      "image_id": "sha256:a78d6b79572168cb25886b80a8b5b8d4ed4390743e3eecb810538683e209dd6b",
+      "cpus": null,
+      "memory_mib": 1024.0
+    }
+  }
+}

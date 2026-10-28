@@ -1,0 +1,54 @@
+# Load test (docs/validation/load_conditions.md). Put it on top of the normal file:
+#   docker compose -f compose.yaml -f compose.load.yaml --profile load up -d
+# It does three things: sets the CPU limits the two versions are compared under, switches off the API's periodic
+# reconciliation (86400 s = once a day), and adds the load-test container. The memory limits stay those of compose.yaml.
+# The CPU limits are Compose's `cpus` (docker run --cpus).
+services:
+  postgres:
+    cpus: 1.0
+  mosquitto:
+    cpus: 0.5
+  gateway:
+    cpus: 1.0
+  mediamtx:
+    cpus: 1.0
+  api:
+    cpus: 2.5
+    environment:
+      RECONCILE_INTERVAL: "86400"
+
+  locust:
+    profiles: [load]
+    build:
+      context: .
+      dockerfile: loadtest/Dockerfile
+    image: ccc-loadtest:1.0
+    # Waits for commands; loadtest/measure.py starts the programs with `docker compose exec`.
+    command: ["sleep", "infinity"]
+    cpus: 2.0
+    mem_limit: 1g
+    # root, because the closed-segment secret (root-owned, mode 0400, the same file MediaMTX's hook reads) is read from
+    # the secrets volume; no capabilities, read-only root file system.
+    user: "0"
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    read_only: true
+    tmpfs: [/tmp]
+    environment:
+      DEMO_USER_PASSWORD: ${DEMO_USER_PASSWORD:?copy .env.example to .env}
+      GATEWAY_URL: http://gateway:8000
+      KC_URL: http://keycloak:8080
+      MQTT_HOST: mosquitto
+      SEGMENT_URL: http://api:8000/internal/v1/segments
+    volumes:
+      - loadwork:/work
+      - type: volume
+        source: secrets
+        target: /run/secret
+        read_only: true
+        volume:
+          subpath: mediamtx
+    restart: "no"
+
+volumes:
+  loadwork:

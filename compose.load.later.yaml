@@ -1,0 +1,26 @@
+# The CPU limits of the later version for the load test. Put it after compose.load.yaml:
+#   docker compose -f compose.yaml -f compose.load.yaml -f compose.load.later.yaml --profile load up -d
+# The first version's API had 2.5 CPUs. The parts written here are, in the later version, the API (1.0), the writer of
+# stamp 1 (1.0) and its Valkey (0.5): the same 2.5 CPUs in all (docs/validation/load_conditions.md). Everything else
+# keeps the limits of compose.load.yaml. The closed-segment calls of the test go to the writer, the way MediaMTX's hook
+# sends them. The programs of loadtest/ are taken from this checkout, not from the image (the only change since the image
+# was built: the load tenants are asked to be put on stamp 1). The code of the API and the writer is taken from this checkout
+# too (as compose.test.yaml does), so that what is measured is the code of this checkout.
+services:
+  api:
+    cpus: 1.0
+    volumes:
+      - ./services/api/app:/srv/app:ro
+      - ./services/api/migrations:/srv/migrations:ro
+      - ./services/api/stamp_migrations:/srv/stamp_migrations:ro
+  writer:
+    cpus: 1.0
+    volumes:
+      - ./services/api/app:/srv/app:ro
+  valkey:
+    cpus: 0.5
+  locust:
+    environment:
+      SEGMENT_URL: http://writer:8000/internal/v1/segments
+    volumes:
+      - ./loadtest:/app:ro

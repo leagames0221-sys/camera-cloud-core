@@ -1,0 +1,83 @@
+Note: the names of versions in this output (v1, v2.0.1) are the names of tags in the original working place, not tags of this repository; docs/openapi/v1.json and docs/openapi/v2.0.1.json are copies of those two versions' descriptions.
+Output of oasdiff 1.33.0 (image tufin/oasdiff:v1.33.0), run on 2026-10-26 after the list of events got `limit` and `offset`.
+Files compared: docs/openapi/v1.json, docs/openapi/v2.0.1.json, docs/openapi/v2.json (the new one), and
+"v2 before paging" = docs/openapi/v2.json as it was before `limit` and `offset` were added (that file is not kept in this repository).
+Command: docker run --rm -v <folder>:/specs:ro tufin/oasdiff:v1.33.0 breaking|changelog /specs/<old> /specs/v2.json [--fail-on ERR|WARN]
+
+=== v1->v2 breaking ERR
+No breaking changes to report, but the specs are different.
+Run 'oasdiff diff' to see structural differences.
+
+exit=0
+=== v1->v2 breaking WARN
+No breaking changes to report, but the specs are different.
+Run 'oasdiff diff' to see structural differences.
+
+exit=0
+=== v1->v2 changelog
+4 changes: 0 error, 0 warning, 4 info
+info	[endpoint-added] at /specs/v2.json
+	in API POST /api/v1/devices/enroll
+		endpoint added
+
+info	[new-optional-request-property] at /specs/v2.json
+	in API POST /api/v1/tenants
+		added the new optional request property `stamp_id`
+
+info	[endpoint-added] at /specs/v2.json
+	in API GET /api/v1/tenants/{tenant_id}/cameras/{camera_id}/events
+		endpoint added
+
+info	[endpoint-added] at /specs/v2.json
+	in API POST /api/v1/tenants/{tenant_id}/cameras/{camera_id}/events/{event_id}/playback
+		endpoint added
+
+
+
+exit=0
+=== v2.0.1->v2 breaking ERR
+No breaking changes to report, but the specs are different.
+Run 'oasdiff diff' to see structural differences.
+
+exit=0
+=== v2.0.1->v2 breaking WARN
+No breaking changes to report, but the specs are different.
+Run 'oasdiff diff' to see structural differences.
+
+exit=0
+=== v2.0.1->v2 changelog
+2 changes: 0 error, 0 warning, 2 info
+info	[endpoint-added] at /specs/v2.json
+	in API GET /api/v1/tenants/{tenant_id}/cameras/{camera_id}/events
+		endpoint added
+
+info	[endpoint-added] at /specs/v2.json
+	in API POST /api/v1/tenants/{tenant_id}/cameras/{camera_id}/events/{event_id}/playback
+		endpoint added
+
+
+
+exit=0
+=== v2 before paging -> v2 breaking ERR
+No breaking changes to report, but the specs are different.
+Run 'oasdiff diff' to see structural differences.
+
+exit=0
+=== v2 before paging -> v2 breaking WARN
+No breaking changes to report, but the specs are different.
+Run 'oasdiff diff' to see structural differences.
+
+exit=0
+=== v2 before paging -> v2 changelog
+2 changes: 0 error, 0 warning, 2 info
+info	[new-optional-request-parameter] at /specs/v2.json
+	in API GET /api/v1/tenants/{tenant_id}/cameras/{camera_id}/events
+		added the new optional `query` request parameter `limit`
+
+info	[new-optional-request-parameter] at /specs/v2.json
+	in API GET /api/v1/tenants/{tenant_id}/cameras/{camera_id}/events
+		added the new optional `query` request parameter `offset`
+
+
+
+exit=0
